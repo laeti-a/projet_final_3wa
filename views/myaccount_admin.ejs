@@ -1,0 +1,32 @@
+<%- include('partials/head'); -%>
+
+<%- include('partials/header_admin'); -%>
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+    
+    <section class="account-sidebar-content"> <!-- Section account sidebar content -->
+        <div class="sidebar"> <!-- Div sidebar -->
+            <a href="/update-menu">Modifier le menu</a>
+            <a href="/show-bookings">Afficher les réservations</a>
+            <a href="/show-orders">Afficher les commandes</a>
+            <a href="/logout" class="logout-link">Se déconnecter</a>
+        </div> <!-- End div sidebar -->
+
+
+        <div class="account-loggedin"> <!-- Div account loggedin -->
+            <% if(successLogin){ %>
+                <h2 class="success-login"><%=successLogin%></h2>
+            <% } %>
+            <h3>Connecté en tant qu'Admin</h3>
+            <img src="/img/svg/sign_in.svg" alt="Sign In">
+        </div> <!-- End div account loggedin -->
+    </section> <!-- End section account sidebar content -->
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

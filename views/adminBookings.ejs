@@ -1,0 +1,51 @@
+<%- include('partials/head'); -%>
+
+<%- include('partials/header_admin'); -%>
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <section class="account-sidebar-content"> <!-- Section account sidebar content -->
+        <div class="sidebar"> <!-- Div sidebar -->
+            <a href="/update-menu">Modifier le menu</a>
+            <a href="/show-bookings">Afficher les réservations</a>
+            <a href="/show-orders">Afficher les commandes</a>
+            <a href="/logout" class="logout-link">Se déconnecter</a>
+        </div> <!-- End div sidebar -->
+
+        <div class="div-table-data"> <!-- Div table data -->
+            <h2>Tableau de bord des réservations</h2>
+            <table class="table-data"> <!-- Table data -->
+                <thead>
+                    <tr>
+                        <th>Nom du client</th>
+                        <th>Date de réservation</th>
+                        <th>Heure d'arrivée</th>
+                        <th>Nombre de personnes</th>
+                        <th>Date de création de la résa</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% bookings.forEach(booking => { %>
+                        <tr>
+                            <td data-label="Nom du client"><%= booking.lastName %> <%= booking.firstName %></td>
+                            <td data-label="Date de réservation"><%= booking.bookingDate %></td>
+                            <td data-label="Heure d'arrivée"><%= booking.bookingTime %></td>
+                            <td data-label="Nombre de personnes"><%= booking.nbOfSeats %></td>
+                            <td data-label="Date de création de la résa"><%= booking.creationTime %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table> <!-- End table data -->
+        </div> <!-- End table data -->
+    </section> <!-- End section account sidebar content -->
+
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

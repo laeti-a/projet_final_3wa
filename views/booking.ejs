@@ -1,0 +1,139 @@
+<%- include('partials/head'); -%>
+
+<!-- Start Header -->
+<header class="header">
+    <nav class="navbar"> <!-- Start navbar -->
+        <a href="/" class="logo"><img src="/img/logo/logo_transparent.png" alt="Logo Vegan'Eat" title="Bienvenue !"/></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/booking" class="nav-link active">Réservation</a>
+            </li>
+            <li class="nav-item">
+                <a href="/order" class="nav-link">Commander</a>
+            </li>
+            <% if (loggedin == false) {%>
+                <li class="nav-item">
+                    <a href="/loginRegister" class="nav-link">S'inscrire / Se Connecter</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == false) {%>
+                <li class="nav-item">
+                    <a href="/my-account" class="nav-link">Mon Compte</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == true) {%>
+                <li class="nav-item">
+                    <a href="/my-account-admin" class="nav-link">Compte Admin</a>
+                </li>
+            <% } %>
+        </ul>
+
+        <!-- Start menu hamburger -->
+        <div class="menu-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- End menu hamburger --> 
+        
+    </nav> <!-- End navbar -->
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> 
+</header>
+<!-- End Header -->
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <section class="booking-top-background"> <!-- Section booking top background -->
+        <div class="text-background">
+            <h1>Réservation</h1>
+            <p>Réservez dès maintenant une table afin d'être sûr d'avoir de la place à votre arrivée !</p>
+        </div>
+    </section> <!-- End section booking top background -->
+
+    <section class="form-book-table"> <!-- Section form book table -->
+        <div class="booking-side-image"></div>
+
+        <% if(loggedin == true){ %>
+            <form id="bookingForm" class="bookingForm" action="/booked" method="POST"> <!-- Form book table -->
+                <h2>Renseignez les informations suivantes pour valider votre réservation</h2>
+                <p>Pour rappel, nous sommes fermés le dimanche !</p>
+
+                <label for="booking_date">Sélectionner la date à laquelle vous souhaitez venir</label>
+                <input type="date" id="booking_date" name="booking_date" required/>
+
+                <label for="booking_time">Choisissez l'heure de votre arrivée</label>
+                <select id="booking_time" name="booking_time" required>
+                    <option value="">...</option>
+                    <option value="11:30">11h30</option>
+                    <option value="11:45">11h45</option>
+                    <option value="12:00">12h00</option>
+                    <option value="12:15">12h15</option>
+                    <option value="12:30">12h30</option>
+                    <option value="12:45">12h45</option>
+                    <option value="13:00">13h00</option>
+                    <option value="13:15">13h15</option>
+                    <option value="13:30">13h30</option>
+                    <option value="13:45">13h45</option>
+                    <option value="14:00">14h00</option>
+                    <option value="14:15">14h15</option>
+                    <option value="19:30">19h30</option>
+                    <option value="19:45">19h45</option>
+                    <option value="20:00">20h00</option>
+                    <option value="20:15">20h15</option>
+                    <option value="20:30">20h30</option>
+                    <option value="20:45">20h45</option>
+                    <option value="21:00">21h00</option>
+                    <option value="21:15">21h15</option>
+                    <option value="21:30">21h30</option>
+                    <option value="21:45">21h45</option>
+                </select>
+
+                <label for="number_of_seats">Sélectionner le nombre de personnes</label>
+                <select id="number_of_seats" name="number_of_seats" required>
+                    <option value="">...</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+
+                <% if(alertBooking != undefined){ %>
+                    <p class="alert-message"><%= alertBooking %></p>
+                <% } %>
+                
+                <% if(successBooking != undefined){ %>
+                    <p class="success-message"><%= successBooking %></p>
+                <% } %>
+
+                <button type="submit" class="booking-submit-btn">Réserver !</button>
+            </form> <!-- End Form book table -->
+
+        <% } else { %>
+            <div class="booking-not-loggedin"> <!-- Div not loggedin -->
+                <p>Vous devez être connecté pour pouvoir réserver une table</p>
+                <p>Si vous n'avez pas de compte, vous pouvez toujours vous en créer un <a href="/loginRegister">ici</a> !</p>
+
+                <img src="/img/svg/book_table.svg" alt="People talking">
+            </div> <!-- End div not loggedin -->
+        <% } %>
+    </section> <!-- End section form book table -->
+    
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

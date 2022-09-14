@@ -1,0 +1,53 @@
+<%- include('partials/head'); -%>
+
+<%- include('partials/header_admin'); -%>
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <section class="account-sidebar-content"> <!-- Section account sidebar content -->
+        <div class="sidebar"> <!-- Div sidebar -->
+            <a href="/update-menu">Modifier le menu</a>
+            <a href="/show-bookings">Afficher les réservations</a>
+            <a href="/show-orders">Afficher les commandes</a>
+            <a href="/logout" class="logout-link">Se déconnecter</a>
+        </div> <!-- End div sidebar -->
+
+        <div class="div-table-data"> <!-- Div table data -->
+            <h2>Historique de mes commandes</h2>
+            <table class="table-data"> <!-- Table data -->
+                <thead>
+                    <tr>
+                        <th>N° Commande</th>
+                        <th>Nom du client</th>
+                        <th>Articles de la commande</th>
+                        <th>Quantité pour chaque article</th>
+                        <th>Montant total</th>
+                        <th>Date de la commande</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% arrayResults.forEach(result => { %>
+                        <tr>
+                            <td data-label="N° Commande"><%= result.order_id %></td>
+                            <td data-label="Nom du client"><%= result.fullName %></td>
+                            <td data-label="Articles"><%= result.nameMeal %></td>
+                            <td data-label="Quantité (chaque article)"><%= result.quantityOrdered %></td>
+                            <td data-label="Montant total" class="meal-price"><%= result.totalAmount %></td>
+                            <td data-label="Date de la commande"><%= result.creationOrderTime %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table> <!-- End table data -->
+        </div> <!-- End table data -->
+    </section> <!-- End section account sidebar content -->
+
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

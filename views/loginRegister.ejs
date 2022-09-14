@@ -1,0 +1,106 @@
+<%- include('partials/head'); -%>
+
+<!-- Start Header -->
+<header class="header">
+    <nav class="navbar"> <!-- Start navbar -->
+        <a href="/" class="logo"><img src="/img/logo/logo_transparent.png" alt="Logo Vegan'Eat" title="Bienvenue !"/></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/booking" class="nav-link">Réservation</a>
+            </li>
+            <li class="nav-item">
+                <a href="/order" class="nav-link">Commander</a>
+            </li>
+            <li class="nav-item">
+                <a href="/loginRegister" class="nav-link active">S'inscrire / Se Connecter</a>
+            </li>
+        </ul>
+
+        <!-- Start menu hamburger -->
+        <div class="menu-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- End menu hamburger --> 
+        
+    </nav> <!-- End navbar -->
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> 
+</header>
+<!-- End Header -->
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <% if(deleteSuccess != undefined){ %>
+        <div class="delete-account-success"><%= deleteSuccess %></div>
+    <% } %>
+    
+    <section class="loginregister-form-flex"> <!-- Section form-flex -->
+        <div class="div-register-form"> <!-- Div register form -->
+            <h2>Créer un compte</h2>
+            <form id="registerForm" class="registerForm" action="/loginRegister/registered" method="POST"> <!-- Register Form -->
+                <label for="register_lastname">Nom</label>
+                <input type="text" placeholder="Nom" id="register_lastname" name="register_lastname" required />
+
+                <label for="register_firstname">Prénom</label>
+                <input type="text" placeholder="Prénom" id="register_firstname" name="register_firstname" required />
+
+                <label for="register_email">Adresse mail</label>
+                <input type="email" placeholder="Adresse mail" id="register_email" name="register_email" required />
+
+                <label for="register_password">Mot de passe</label>
+                <input type="password" placeholder="Mot de passe" id="register_password" name="register_password" required />
+
+                <label for="register_confirm_password">Confirmation du mot de passe</label>
+                <input type="password" placeholder="Confirmation du mot de passe" id="register_confirm_password" name="register_confirm_password" required />
+
+                <% if(alertRegisterMessage != undefined){ %>
+                    <p class="alert-message"><%= alertRegisterMessage %></p>
+                <% } %>
+
+                <% if(successRegisterMessage != undefined){ %>
+                    <p class="success-message"><%= successRegisterMessage %></p>
+                <% } %>
+
+                <button type="submit" class="register-btn">S'inscrire</button>
+            </form> <!-- End Register Form -->
+        </div> <!-- End div register form -->
+
+        <div class="div-login-form"> <!-- Div login form -->
+            <h2>Se connecter</h2>
+            <form id="loginForm" class="loginForm" action="/loginRegister/loggedin" method="POST"> <!-- Login Form -->
+                <label for="login_email">Votre adresse mail</label>
+                <input type="text" placeholder="Adresse mail" id="login_email" name="login_email" required />
+
+                <label for="login_password">Votre mot de passe</label>
+                <input type="password" placeholder="Mot de passe" id="login_password" name="login_password" required />
+                <i class="far fa-eye" id="showPassword"></i>
+
+                <% if(alertSubmitMessage != undefined){ %>
+                    <p class="alert-message"><%= alertSubmitMessage %></p>
+                <% } %>
+
+                <button type="submit" class="login-btn">Se connecter</button>
+            </form> <!-- End Login Form -->
+        </div> <!-- End div login form -->
+    </section> <!-- End section form-flex -->
+
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

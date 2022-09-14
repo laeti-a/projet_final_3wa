@@ -1,0 +1,89 @@
+<%- include('partials/head'); -%>
+
+<%- include('partials/header_user'); -%>
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <section class="account-sidebar-content"> <!-- Section info forms -->
+        <div class="sidebar"> <!-- Div sidebar -->
+            <a href="/informations">Mes informations</a>
+            <a href="/my-orders">Mes commandes</a>
+            <a href="/change-informations">Modifier mes informations</a>
+            <a href="/delete-account">Supprimer mon compte</a>
+            <a href="/logout" class="logout-link">Se déconnecter</a>
+        </div> <!-- End div sidebar -->
+
+        <div class="info-div-forms"> <!-- Div info forms -->
+            <div class="div-update-form"> <!-- Div update form -->
+                <h2>Modifier votre mot de passe</h2>
+                <form id="updatePasswordForm" class="updatePasswordForm" action="/informations/update-pass" method="POST"> <!-- Form Update Password -->
+                    <label for="current_password">Mot de passe actuel</label>
+                    <input type="password" placeholder="Mot de passe actuel" id="current_password" name="current_password" required />
+
+                    <label for="new_password">Nouveau mot de passe</label>
+                    <input type="password" placeholder="Nouveau mot de passe" id="new_password" name="new_password" required />
+
+                    <label for="confirm_new_password">Confirmation du nouveau mot de passe</label>
+                    <input type="password" placeholder="Confirmation du nouveau mot de passe"  id="confirm_new_password" name="confirm_new_password" required />
+
+                    <% if(alertMessagePass != undefined){ %>
+                        <p class="alert-message"><%= alertMessagePass %></p>
+                    <% } %>
+    
+                    <% if(successMessagePass != undefined){ %>
+                        <p class="success-message"><%= successMessagePass %></p>
+                    <% } %>
+
+                    <button type="submit" class="update-pass-btn">Enregistrer le nouveau mot de passe</button>
+                </form> <!-- End form Update Password -->
+            </div> <!-- End div update forms -->
+
+            <div class="div-update-form"> <!-- Div update form -->
+                <h2>Compléter / Modifier vos informations</h2>
+                <form id="updateInfoForm" class="updateInfoForm" action="/informations/update-info" method="POST"> <!-- Form Update Information -->
+                    <label for="birth_date">Date de naissance</label>
+                    <input type="date" class="info-birthdate" id="birth_date"  name="birth_date" />
+                    
+                    <h3 class="info-change-address">Adresse</h3>
+                    <p class="comment-address-info">Pour modifier votre adresse, vous devez remplir tous les champs la concernant (n° et rue, ville, code postal et pays)</p>
+                    <label class="info-address-content" for="address_content">N° et rue</label>
+                    <input type="text" placeholder="N° et rue" id="address_content" name="address_content" />
+
+                    <label for="address_city">Ville</label>
+                    <input type="text" placeholder="Ville" id="address_city" name="address_city" />
+
+                    <label for="address_zip_code">Code postal</label>
+                    <input type="text" placeholder="Code postal" id="address_zip_code" name="address_zip_code" />
+
+                    <label for="address_country">Pays</label>
+                    <input class="info-country" type="text" placeholder="Pays" id="address_country" name="address_country" />
+
+                    <label for="phone_number">Numéro de téléphone <span class="comment-info-form">(promis on ne vous appelle pas en plein milieu de la nuit)</span></label>
+                    <input class="info-phone" type="text" placeholder="ex : 0611223344" id="phone_number" name="phone_number" />
+
+                    <label for="access_password">Veuillez également renseigner votre mot de passe pour effectuer les modifications</label>
+                    <input type="password" placeholder="Mot de passe" id="access_password" name="access_password" required />
+
+                    <% if(alertMessageInfo != undefined){ %>
+                        <p class="alert-message"><%= alertMessageInfo %></p>
+                    <% } %>
+    
+                    <% if(successMessageInfo != undefined){ %>
+                        <p class="success-message"><%= successMessageInfo %></p>
+                    <% } %>
+
+                    <button type="submit" class="update-info-btn">Enregistrer les modifications</button>
+                </form> <!-- End Form Update Information -->
+            </div> <!-- End div update forms -->
+        </div> <!-- End div info forms -->
+    </section> <!-- End section info forms -->
+
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

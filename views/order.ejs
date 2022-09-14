@@ -1,0 +1,101 @@
+<%- include('partials/head'); -%>
+
+<!-- Start Header -->
+<header class="header">
+    <nav class="navbar"> <!-- Start navbar -->
+        <a href="/" class="logo"><img src="/img/logo/logo_transparent.png" alt="Logo Vegan'Eat" title="Bienvenue !"/></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/booking" class="nav-link">Réservation</a>
+            </li>
+            <li class="nav-item">
+                <a href="/order" class="nav-link active">Commander</a>
+            </li>
+            <% if (loggedin == false) {%>
+                <li class="nav-item">
+                    <a href="/loginRegister" class="nav-link">S'inscrire / Se Connecter</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == false) {%>
+                <li class="nav-item">
+                    <a href="/my-account" class="nav-link">Mon Compte</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == true) {%>
+                <li class="nav-item">
+                    <a href="/my-account-admin" class="nav-link">Compte Admin</a>
+                </li>
+            <% } %>
+        </ul>
+
+        <!-- Start menu hamburger -->
+        <div class="menu-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- End menu hamburger --> 
+        
+    </nav> <!-- End navbar -->
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> 
+</header>
+<!-- End Header -->
+
+<!-- Start Main -->
+<main class="main">
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <section class="order-top-background"> <!-- Section order top background -->
+        <div class="text-background">
+            <h1>A Emporter</h1>
+            <p>Commandez vos plats favoris, venez les chercher et dégustez-les au fond de votre canapé !</p>
+        </div>
+    </section> <!-- End section order top background -->
+
+    <section class="section-order-select"> <!-- Section order select -->
+
+        <% if(loggedin == true){ %>
+            <a class="go-to-cart" href="/cart">Voir le panier</a>
+
+            <% meals.forEach(meal => {%>
+                <div class="select-meal"> <!-- Div select meal -->
+                    <img src="/img/meals/<%= meal.photo %>" alt="<%= meal.nameMeal %>" />
+                    <div class="select-meal-details">
+                        <h2> <%= meal.nameMeal %> </h2>
+                        <h3 class="meal-price"> <%= meal.price %> </h3>
+                        <p> <%= meal.description %> </p>
+                    </div>
+                    <div class="order-form-add">
+                        <form action="/add-to-cart" method="POST">
+                            <input type="hidden" name="id_meal" value="<%= meal.id %>">
+                            <button type="submit">Ajouter au panier</button>
+                        </form>
+                    </div>
+                </div> <!-- End div select meal -->
+            <% }) %>
+
+        <% } else { %>
+            <div class="order-not-loggedin"> <!-- Div order not loggedin -->
+                <div class="text-not-logged">
+                    <p>Vous devez être connecté pour pouvoir passer commande !</p>
+                    <p>Si vous n'avez pas de compte, vous pouvez toujours vous en créer un <a href="/loginRegister">ici</a> !</p>
+                </div>
+                <img src="/img/svg/command.svg" alt="People talking">
+            </div> <!-- End div order not loggedin -->
+        <% } %>
+    </section> <!-- End section order select -->
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,1659 @@
+/* *******************************************************
+GENERAL
+******************************************************** */
+body {
+	line-height: 1;
+}
+
+h1 {
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
+h2, h3, h4, h5, p, a, label {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+input[type],
+textarea,
+select {
+    font-family: 'Open Sans Condensed', sans-serif;
+    display: inline-block;
+    width: 70%;
+    margin-top: 0.4rem;
+    padding: 0.6rem;
+    border: none;
+    background-color: #DCB993;
+    font-size: 1.2rem;
+    border-radius: 0.6rem;
+}
+
+textarea[placeholder],
+option {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+label {
+    display: inline-block;
+    width: 70%;
+    margin-top: 1.3rem;
+    font-size: 1.4rem
+}
+
+.fa-eye {
+    margin-left: -1.9rem;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    display: inline-block;
+    width: 70%;
+    margin-top: 2.3rem;
+    padding: 0.5rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.2rem;
+    background-color: #DCB993;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.5s ease
+}
+
+button[type="submit"]:hover {
+    color: #fceddd;
+    background-color: #947655;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #DCB993;
+}
+
+table, th, td {
+    border: 0.1rem solid;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+/* *******************************************************
+HEADER
+******************************************************** */
+header {
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	width: 100%;
+    background-color: #fceddd;
+    z-index: 1;
+}
+
+.logo {
+	width: 10%;
+    margin: 1rem 1.5rem;
+}
+
+.logo img {
+	width: 100%;	
+}
+
+/* **********************************
+NAV
+*************************************/
+.navbar,
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+	list-style: none;	
+}
+
+.nav-item {
+    margin: 0 1.5rem;	
+}
+
+.nav-link {
+    font-size:1.5rem;
+    color: #947655;
+	text-decoration: none;
+	padding: 0.5rem 1.1rem;
+	transition: all .7s linear;
+    border-radius: 0.5rem
+}
+
+.nav-link:hover,
+.nav-item a:focus,
+.active {
+	background-color: #DCB993;
+	color: #947655;
+    border-radius: 0.5rem
+}
+
+/* **********************************
+NAVBAR BECOMING HAMBURGER MENU
+*************************************/
+.menu-hamburger {
+    display: none;
+}
+
+.menu-hamburger .bar {
+    display: block;
+    width: 1.5rem;
+    height: 0.18rem;
+    margin: 0.3rem 2rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #947655;
+}
+
+
+/* ***********************************
+SCROLL BAR
+**************************************/
+.progress-container {
+	max-width: 100%;
+	height: 0.37rem;
+	background-color: #dbdfe0;
+}
+  
+.progress-bar {
+    height: 0.37rem;
+    background-color: #947655;
+    width: 0%;
+}
+
+
+/* *******************************************************
+MAIN
+******************************************************** */
+.btn-back-to-top {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    display: none;
+    border-radius: 50%;
+    background: linear-gradient(#947655, #DCB993);
+    border: none;
+    color: white;
+    width: 3rem;
+    height: 3rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 10
+}
+
+.btn-back-to-top:hover {
+    background:linear-gradient(#947655, #DCB993);
+    border: none;
+    color:#252E30;
+}
+
+
+/* ******************************************
+        HOME,
+        BOOKING,
+        ORDER
+        { TOP-BACKGROUND }
+*********************************************/
+.home-top-background {
+    background: url('/img/food_background1.jpg');
+}
+
+.booking-top-background {
+    background: url('/img/menu_background_medium.jpg');
+}
+
+.order-top-background{
+    background: url('/img/order2_background.jpg');
+}
+
+.home-top-background,
+.booking-top-background,
+.order-top-background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 13%;
+    margin-top: 4%;
+}
+
+.text-background {
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 2rem 0;
+}
+
+.text-background h1 {
+    font-size: 9.5rem;
+    border-bottom: 0.6rem double;
+    border-top: 0.6rem double ;
+    margin: 3% auto;
+    width: 80%
+}
+
+.text-background p {
+    font-size: 3.5rem;
+    margin: 3rem auto;
+    width: 70%;
+}
+
+
+/* ******************************************
+            HOME PAGE
+*********************************************/
+.home-intro-resto {
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 70%;
+    margin: 0 auto;
+    line-height: 1.5;
+    animation: fadeIn 7s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.home-intro-resto>h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    border-bottom: 0.3rem solid #DCB993;
+
+}
+
+.home-intro-resto>p {
+    font-size: 2rem;
+    width: 80%;
+    margin: 0 auto
+}
+
+.home-intro-link {
+    text-decoration: none;
+    color:#644e36;
+    transition: 0.5s ease;
+    background-color: rgba(252, 237, 221, 2);
+    padding: 0.4%
+}
+
+.home-separation {
+    background: url('/img/quote_medium.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15%;
+    margin-top: 4%;
+    box-shadow: 
+        inset 0 0.68rem 1rem -0.4rem black,
+        inset 0 -0.68rem 1rem -0.4rem black;
+}
+
+
+/* ******************************************
+            MENU PAGE
+*********************************************/
+.menu-title {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 60%;
+    padding-top: 6rem;
+    align-items: center;
+}
+
+.menu-title>img {
+    width:40%
+}
+
+.menu-title>h1 {
+    font-size: 8rem;
+    border-bottom: 0.7rem double;
+    border-top: 0.7rem double;
+}
+
+.menu-container {
+    margin: 0 20% 0 20%;
+    background-color: #947655;
+}
+
+.menu-grid {
+	display: grid;
+	grid-template-rows: repeat(1, 1fr);
+	grid-template-columns: repeat(5, 1fr);
+	gap: 0.5rem;
+	width: 100%;
+	height: 40vh;
+	margin: 0 auto;
+}
+
+.menu-grid [class*="photo"] {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.menu-details-meals {
+    border-top: 2.2rem double #DCB993;
+    margin-top: 1%;
+    padding: 2% 7%
+}
+
+.menu-details-meals>h2 {
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 4rem;
+    border-bottom: 1.1rem double #DCB993;
+    width: 50%
+}
+
+.menu-details-flex {
+    display: flex;
+    margin-top: 6%;
+    border-bottom: 1.1rem double #DCB993;
+}
+
+.menu-details-flex>img {
+    width: 50%;
+    margin-bottom: 3%
+}
+
+.menu-meal-name-description {
+    width: 50%;
+    font-size: 2rem;
+    padding-right: 4%;
+    text-align: center;
+}
+
+.menu-meal-name {
+    font-weight: bold;
+    font-size: 2.6rem;
+    font-family: 'Alumni Sans', sans-serif;
+    text-transform: uppercase;
+}
+
+.meal-price::after {
+    content: "€"
+}
+
+
+/* ******************************************
+            BOOKING PAGE
+*********************************************/
+.form-book-table {
+    display: flex;
+    margin-top: 3%;
+    border-top: 2rem double #947655;
+}
+
+.booking-side-image {
+    background: url('/img/interior_small.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 25% 0;
+    width: 35%;
+    margin-top: 4%;
+    box-shadow: 
+        inset 0 0.68rem 1rem -0.4rem black,
+        inset 0 -0.68rem 1rem -0.4rem black;
+}
+
+.bookingForm {
+    padding: 4%;
+    margin: 10% auto;
+    width: 45%;
+    box-shadow: 0.4rem 0.9rem 1.6rem -0.4rem black
+}
+
+.bookingForm h2 {
+    font-size: 2.5rem;
+    font-family: 'Alumni Sans', sans-serif;
+    border-bottom: 0.15rem solid black;
+    width: 80%
+}
+
+.bookingForm p {
+    font-size: 1.3rem
+}
+
+.bookingForm select {
+    margin-top: 0.5rem;
+}
+
+.booking-not-loggedin {
+    margin-top: 10%;
+    margin-left: 10%;
+    text-align: center;
+    line-height: 2;
+    animation: fadeIn 5s;
+}
+
+.booking-not-loggedin p {
+    font-size: 2rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.booking-not-loggedin img {
+    padding-top: 15%;
+    width: 75%;
+}
+
+.booking-not-loggedin a,
+.order-not-loggedin a {
+    text-decoration: none;
+    color:#644e36;
+    transition: 0.5s ease;
+    background-color: rgba(252, 237, 221, 2);
+    padding: 0.4%
+}
+
+
+/* ******************************************
+            ORDER PAGE
+*********************************************/
+.select-meal {
+    display: flex;
+    width: 70%;
+    margin: 5% auto;
+    align-items: center;
+    box-shadow: 0.4rem 0.9rem 1.6rem -0.4rem black;
+    transition : 1s ease
+}
+
+.select-meal:hover {
+    transform: scale(1.1);
+}
+
+.select-meal img {
+    width: 35%;
+}
+
+.select-meal-details {
+    padding: 3%;
+    width: 35%
+}
+
+.select-meal-details p {
+    font-size: 1.3rem;
+    line-height: 1.5
+}
+
+.order-form-add {
+    width: 25%;
+}
+
+.order-not-loggedin {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 8%;
+    line-height: 2;
+}
+
+.text-not-logged {
+    font-size: 2rem;
+    animation: fadeIn 5s;
+    width: 40%
+}
+
+
+/* ************************************
+            CART PAGE
+***************************************/
+.section-cart-content {
+    margin-top: 7%;
+}
+
+.cart-details {
+    width: 55%;
+    margin: 0 auto
+}
+
+.cart-details h2 {
+    margin: 0 auto;
+    width: 100%;
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 3rem;
+    border-bottom: 1rem double #644e36;
+}
+
+.button-in-cart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.emptyCartForm {
+    width: 15%;
+}
+
+.emptyCartForm>button {
+    font-size: 1.3rem;
+}
+
+.back-to-order,
+.total-cart a,
+.go-to-cart {
+    text-decoration: none;
+    color: #947655;
+    transition: 0.5s ease;
+    background-color: #fceddd;
+    padding: 1%;
+    border: 0.2rem solid #947655;
+}
+
+.back-to-order:hover,
+.total-cart a:hover,
+.go-to-cart:hover {
+    text-decoration: none;
+    color: #fceddd;
+    background-color: #947655;
+}
+
+.back-to-order,
+.go-to-cart {
+    margin-left: 2.5rem;
+    font-size: 1.3rem;
+}
+
+.back-to-order::before {
+    content: '← '
+}
+
+.go-to-cart::after {
+    content: ' →'
+}
+
+.cart-meals {
+    display: flex;
+    margin: 4% auto;
+    width: 100%;
+    border-top: 0.1rem solid #644e36;
+    border-bottom: 0.1rem solid #644e36;
+    align-items: center;
+}
+
+.cart-meals img,
+.checkoutForm {
+    width: 30%
+}
+
+.cart-meal-details {
+    width: 40%;
+    padding: 3%;
+    font-size: 1.5rem
+}
+
+.form-delete-fromCart {
+    margin: 0 auto;
+    font-size: 1rem;
+    width: 30%
+}
+
+.deleteFromCartForm {
+    width: 60%;
+    margin: 0 auto
+}
+
+.total-cart {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+    font-size: 2rem
+}
+
+.total-cart p{
+    margin: 0;
+    font-size: 3rem;
+    border: 0.1rem solid #947655;
+    padding: 1%
+}
+
+.checkoutForm button{
+    font-size: 1.6rem;
+    padding: 4%
+}
+
+/* ************************************
+            CHECKOUT PAGE
+***************************************/
+.background-checkout {
+    margin-top: 4%;
+}
+
+.checkout-text {
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 2rem 0;
+}
+
+.checkout-text h1 {
+    font-size: 7rem;
+    margin: 3% auto;
+    width: 80%
+}
+
+.checkout-text p {
+    font-size:3rem;
+    width: 75%;
+    margin: 3% auto
+}
+
+.checkout-text a {
+    font-size: 2rem;
+    background-color: #fceddd;
+    color:#947655;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: 0.5s ease
+}
+
+.checkout-text a:hover {
+    background-color: #947655;
+    color:#fceddd;
+}
+
+
+/* ******************************************
+            LOGIN / REGISTER PAGE
+*********************************************/
+.loginregister-form-flex {
+    display: flex;
+    margin-top: 10%
+}
+
+.div-register-form,
+.div-login-form {
+    width: 100%;
+}
+
+.div-register-form>h2,
+.div-login-form>h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 3rem;
+    margin: 0 auto;
+    border-bottom: 0.15rem solid #644e36;
+    width: 45%
+}
+
+.registerForm,
+.loginForm {
+    background-color: #fceddd;
+    width: 50%;
+    text-align: center;
+    border-radius: 1.6rem;
+    padding: 5%;
+    box-shadow: 0 0.7rem 2rem 0.15rem rgba(0, 0, 0, 0.14);
+    margin: 4% auto
+}
+
+.register-btn,
+.login-btn {
+    color: #644e36;
+}
+
+
+/* ******************************************
+            ACCOUNT PAGES
+*********************************************/
+.account-sidebar-content {
+    display: flex;
+    margin-top: 7%
+}
+
+.account-sidebar-content>.sidebar {
+    margin: 0
+}
+
+.sidebar {
+    width: 12%;
+    background-color: #DCB993;
+    overflow-x: hidden;
+    padding: 2% 1%;
+    margin-top: 5%;
+    line-height:4;
+    box-shadow:
+        inset 0 0.68rem 1rem -0.4rem #644e36,
+        inset 0 -0.68rem 1rem -0.4rem #644e36;
+}
+
+.sidebar a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #644e36;
+    display: block;
+    border-bottom: 0.5rem double #644e36
+}
+
+.sidebar a:hover {
+    color: #947655;
+}
+
+.account-loggedin {
+    margin: 0 auto;
+}
+
+.account-loggedin h3{
+    font-size: 2rem
+}
+
+.alert-message {
+    padding: 1%;
+    font-size: 1.2rem;
+    color: red;
+    font-weight: bold;
+}
+
+.success-message {
+    padding: 1%;
+    font-size: 1.2rem;
+    color: green;
+    font-weight: bold;
+}
+
+.success-login,
+.delete-account-success {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.delete-account-success {
+    margin-top: 6%
+}
+
+/* ************************************
+        INFORMATION USER PAGE,
+        DELETE ACCOUNT USER PAGE
+***************************************/
+.info-user h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Alumni Sans', sans-serif;
+    border-bottom: 0.15rem solid black;
+}
+
+.alert-deleting h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 3rem;
+    color: red;
+}
+
+.info-user p, 
+.alert-deleting p {
+    font-size: 1.5rem;
+}
+
+.info-user,
+.alert-deleting {
+    margin: 0 auto;
+    padding: 3%;
+    background-color: #DCB993;
+    border-radius: 0.9rem;
+    width: 50%;
+}
+
+.alert-deleting {
+    background-color: #fceddd;
+    text-align: center;
+}
+
+.delete-account-btn {
+    width: 50%;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: red;
+    background-color: #DCB993;
+    transition: 0.5s ease
+}
+
+.delete-account-btn:hover {
+    background-color: #947655;
+}
+
+/* ************************************
+        USER ORDERS, 
+        SHOW BOOKINGS, 
+        SHOW ORDERS 
+        {  TABLES  }
+***************************************/
+.div-table-data {
+    margin: 3% auto;
+    text-align: center;
+}
+
+.div-table-data h2{
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 3rem;
+    margin: 3% auto;
+    border-bottom: 0.15rem solid #644e36;
+    width: 70%
+}
+
+.table-data td,
+.table-data th {
+    border: 0.15rem solid #644e36;
+    padding: 2rem;
+    font-size: 1.2rem
+}
+
+.table-data th {
+    background-color: #947655;
+    color:#fceddd;
+}
+
+.table-data tr:nth-child(even){
+    background-color: #DCB993;
+}
+
+
+/* ************************************
+      CHANGE INFORMATION USER PAGE,
+      CHANGE MENU PAGE
+***************************************/
+.info-div-forms,
+.update-menu-content {
+    width: 70%;
+    margin: 0 auto
+}
+
+.div-update-form h2,
+.div-add-meal h2,
+.div-delete-meal h2,
+.div-update-meal h2 {
+    font-family: 'Alumni Sans', sans-serif;
+    font-size: 3rem;
+    margin-left: 5%;
+    border-bottom: 0.15rem solid #644e36;
+    width: 50%
+}
+
+.updatePasswordForm,
+.updateInfoForm,
+.addMealForm,
+.deleteMealForm,
+.updateMealForm,
+.uploadImageForm {
+    background-color: #fceddd;
+    width: 80%;
+    padding: 5%;
+    box-shadow:
+        inset 0 0.68rem 1rem -0.4rem #947655,
+        inset 0 -0.68rem 1rem -0.4rem #947655;
+    margin-bottom: 5rem
+}
+
+.updateMealForm {
+    margin-bottom: 2rem
+}
+
+.comment-info-form {
+    font-size: 1.3rem;
+    font-style: italic
+}
+
+.info-birthdate,
+.info-country,
+.info-phone {
+    margin-bottom: 3rem
+}
+
+.info-change-address {
+    margin: 0;
+    padding: 0;
+    font-size: 1.7rem;
+    border-bottom: 0.1rem solid black;
+    width: 40%
+}
+
+.info-address-content {
+    margin-top: 1rem
+}
+
+.comment-address-info {
+    font-size: 1.2rem
+}
+
+/* ************************************
+       404 PAGE
+***************************************/
+.background-page-404 {
+    margin-top: 4%;
+}
+
+.text-404-background {
+    text-align: center;
+    background-color: rgba(255,255,255,0.5);
+    padding: 2rem 0;
+}
+
+.text-404-background h1 {
+    font-size: 7rem;
+    margin: 3% auto;
+    width: 80%
+}
+
+.text-404-background p {
+    font-size:3rem;
+    width: 75%;
+    margin: 3% auto
+}
+
+.text-404-background a {
+    font-size: 2rem;
+    background-color: #fceddd;
+    color:#947655;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: 0.5s ease
+}
+
+.text-404-background a:hover {
+    background-color: #947655;
+    color:#fceddd;
+}
+
+
+
+
+
+/* *******************************************************
+FOOTER
+******************************************************** */
+.footer {
+    background-color: #fceddd;
+    color: #947655;
+    margin-top: 10rem;
+    padding: 3.5rem;
+    border-top: 1.5rem double #947655;
+}
+
+.flex-footer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 9rem;
+}
+
+.details-resto h5,
+.map p {
+    font-size: 2rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #947655;
+}
+
+.details-resto h5 {
+    margin: 1.2rem 0
+}
+
+.media-links a {
+    color: #947655;
+    transition: 0.5s;
+    margin-right: 2rem
+}
+
+.media-links a:hover {
+    color: #DCB993;
+}
+
+.horaires-resto {
+    margin-top: 15%
+}
+
+.horaires-detail {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.4rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 1.5;
+    width: 100%
+}
+
+.horaires-detail span{
+    font-weight: bold;
+}
+
+.map {
+    text-align: center;
+}
+
+.map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.copyright > .logo {
+    width: 13%;
+    margin:0 auto;
+}
+
+.copyright {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 0 auto;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.1rem;
+}
+
+.copyright p {
+    margin-top: 1rem;
+}
+
+.copyright p::before {
+    content: '© ';
+}
+
+
+
+
+/* *****************************************************************
+MEDIA QUERIES TABLETTE
+***************************************************************** */
+@media screen and (max-width: 68.75rem) {
+    /* *********************************
+    HEADER
+    ************************************/
+    .logo {
+        width: 20%;
+    }
+
+    /* **************************
+    HAMBURGER MENU
+    *****************************/  
+    .nav-menu {
+        position: fixed;
+        left: -150%;
+        top: 5rem;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+		background-color: #fceddd;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2rem 0;
+    }
+
+    .menu-hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+	.menu-hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburger.active .bar:nth-child(1) {
+        transform: translateY(0.5rem) rotate(45deg);
+    }
+
+    .menu-hamburger.active .bar:nth-child(3) {
+        transform: translateY(-0.5rem) rotate(-45deg);
+    }
+
+    /* *********************************
+    HOME PAGE
+    ************************************/
+    .home-top-background,
+    .booking-top-background,
+    .order-top-background {
+        margin-top: 8%
+    }
+
+    .text-background h1 {
+        font-size: 6rem;
+    }
+    
+    .text-background p {
+        font-size: 3rem;
+    }
+
+    .home-intro-resto {
+        width: 90%;
+    }
+    
+    .home-intro-resto>h2 {
+        font-size: 3rem;
+    }
+    
+    .home-intro-resto>p {
+        font-size: 2rem;
+    }
+
+    /* *********************************
+    MENU PAGE
+    ************************************/
+    .menu-title {
+        width: 80%;
+        padding-top:8rem;
+    }
+
+    .menu-title>img {
+        width:40%
+    }
+
+    .menu-title>h1 {
+        font-size: 6rem;
+    }
+
+    .menu-container {
+        margin: 0 10% 0 10%;
+    }
+
+    .menu-meal-name-description {
+        width:40%;
+        font-size:1.7rem;
+    }
+
+    .menu-meal-name {
+        font-size: 2rem;
+    }
+
+
+    /* *********************************
+    BOOKING PAGE
+    ************************************/
+    .booking-side-image {
+        padding: 35% 0;
+    }
+
+    .booking-not-loggedin p {
+        font-size: 1.7rem;
+        width: 85%;
+    }
+
+    .booking-not-loggedin img {
+        width: 60%;
+    }
+
+
+    /* *********************************
+    ORDER PAGE
+    ************************************/
+    .select-meal {
+        width: 85%;
+    }
+    
+    .select-meal img {
+        width: 45%;
+    }
+    
+    .select-meal-details,
+    .order-not-loggedin img {
+        width: 40%
+    }
+
+    .text-not-logged {
+        font-size: 1.7rem
+    }
+
+
+    /* *********************************
+    CART PAGE
+    ************************************/
+    .section-cart-content {
+        margin-top: 10%;
+    }
+
+    .cart-details {
+        width: 70%;
+        margin: 6% auto
+    }
+
+
+    /* *********************************
+    LOGIN / REGISTER PAGE
+    ************************************/
+    .loginregister-form-flex {
+        margin-top: 15% 
+    }
+
+    .div-register-form,
+    .div-login-form {
+        width: 100%;
+    }
+
+    .div-register-form>h2,
+    .div-login-form>h2 {
+        width: 50%
+    }
+
+    .registerForm,
+    .loginForm {
+        width: 65%;
+    }
+
+    .success-login,
+    .delete-success-message {
+        margin-top: 10%;
+    }
+
+
+    /* *********************************
+    ACCOUNT PAGES
+    ************************************/
+    .account-sidebar-content {
+        margin-top: 12%
+    }
+
+    .sidebar {
+        width: 20%;
+        line-height: 3
+    }
+
+    .account-loggedin {
+        width: 70%;
+        text-align: center;
+    }
+
+    .account-loggedin img {
+        width: 80%
+    }
+
+    /* *********************************
+    USER ORDERS PAGE, 
+    SHOW BOOKINGS PAGE, 
+    SHOW ORDERS PAGE
+    ************************************/
+    .table-data {
+        border: none;
+        margin: 0 auto;
+        width: 100%
+    }
+
+    .table-data thead {
+        display: none;
+    }
+    
+    .table-data tr{
+        display: block;
+        margin-bottom: 2.5rem;
+    }
+    
+    .table-data td {
+        display: block;
+        text-align: right;
+    }
+    
+    .table-data td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        font-size:1rem
+    }
+
+
+    /* *********************************
+    FOOTER
+    ************************************/
+    .flex-footer {
+        display: block;
+        margin-bottom: 5rem;
+    }
+
+    .details-resto {
+        text-align:center;
+    }
+
+    .media-links a {
+        margin: 0.5rem
+    }
+
+    .horaires-resto {
+        margin-top: 8%;
+        margin-bottom: 10%;
+    }
+
+    .copyright > .logo {
+        width: 23%;
+    }
+}
+
+
+/* *****************************************************************
+MEDIA QUERIES TELEPHONE
+***************************************************************** */
+@media screen and (max-width: 32.5rem) {
+    /* *********************************
+    HEADER
+    ************************************/
+    .logo {
+        width: 45%;
+    }
+
+    /* *********************************
+    HOME PAGE
+    ************************************/
+    .home-top-background,
+    .booking-top-background,
+    .order-top-background {
+        margin-top: 18%
+    }
+
+    .text-background {
+        padding: 0.1rem 2rem;
+        width: 85%
+    }
+    
+    .text-background h1 {
+        font-size: 5.5rem;
+        width: 100%;
+    }
+    
+    .text-background p,
+    .home-intro-resto>h2 {
+        font-size: 2.5rem;
+    }
+
+    .home-intro-resto {
+        line-height: 2;
+    }
+    
+    .home-intro-resto>p {
+        font-size: 1.7rem;
+    }
+
+    /* *********************************
+    MENU PAGE
+    ************************************/
+    .menu-title {
+        display: block;
+        width: 75%;
+    }
+
+    .menu-title>img {
+        width: 100%
+    }
+
+    .menu-title>h1 {
+        margin: 0;
+        margin-bottom: 5%
+    }
+
+    .menu-details-meals>h2 {
+        font-size: 4rem;
+        width: 100%
+    }
+
+    .menu-details-flex {
+        display: block;
+    }
+
+    .menu-details-flex>img {
+        width: 100%;
+        margin-bottom: 6%
+    }
+    
+    .menu-meal-name-description {
+        width: 100%;
+        font-size:1.5rem;
+        padding: 0;
+    }
+
+    /* *********************************
+    BOOKING PAGE
+    ************************************/
+    .form-book-table {
+        display: block;
+    }
+
+    .booking-side-image {
+        width: 100%;
+    }
+
+    .booking-not-loggedin {
+        margin-left: 5%;
+    }
+
+    .booking-not-loggedin img {
+        width: 70%;
+    }
+
+    .bookingForm {
+        width: 80%;
+        box-shadow: 0.4rem 0.9rem 1.6rem -0.4rem black;
+        text-align: center;
+    }
+
+    .bookingForm h2 {
+        font-size: 2rem;
+        width: 85%;
+        margin: 0 auto
+    }
+
+
+    /* *********************************
+    ORDER PAGE
+    ************************************/
+    .select-meal {
+        display: block;
+        width: 75%;
+        margin: 15% auto;
+    }
+    
+    .select-meal img {
+        width: 100%;
+    }
+    
+    .select-meal-details {
+        width: 90%
+    }
+
+    .order-form-add {
+        width: 80%;
+        margin: 2% auto;
+        text-align: center;
+    }
+
+    .order-form-add button {
+        margin-top: 0;
+        margin-bottom: 5%
+    }
+
+    .order-not-loggedin {
+        display: block;
+        text-align: center;
+    }
+
+    .text-not-logged {
+        width: 80%;
+        margin: 0 auto
+    }
+
+    .order-not-loggedin img {
+        width: 80%;
+    }
+
+    /* *********************************
+    CART PAGE
+    ************************************/
+    .section-cart-content {
+        margin-top: 30%;
+    }
+
+    .cart-details {
+        width: 70%;
+        margin: 6% auto
+    }
+
+    .button-in-cart {
+        display: block;
+    }
+
+    .emptyCartForm {
+        width: 35%;
+        margin-left: 8%;
+        margin-top: 5%
+    }
+
+    .emptyCartForm>button {
+        font-size: 1.2rem;
+    }
+
+    .cart-meals {
+        display: block;
+        text-align: center;
+    }
+
+    .cart-meals img,
+    .form-delete-fromCart {
+        width: 70%
+    }
+    
+    .cart-meal-details {
+        width: 70%;
+        padding: 2%;
+        font-size: 1.4rem;
+        margin: 0 auto
+    }
+
+    .deleteFromCartForm {
+        width: 60%;
+        margin: 0 auto
+    }
+
+    .deleteFromCartForm button {
+        margin-top: 0;
+        margin-bottom: 10%
+    }
+
+    .total-cart {
+        display: block;
+        text-align: center;
+        margin-top: 15%
+    }
+    
+    .total-cart p{
+        margin: 0;
+        font-size: 3rem;
+        border: 0.1rem solid #947655;
+        padding: 3%
+    }
+
+    .checkoutForm{
+        width: 100%;
+    }
+
+
+    /* *********************************
+    LOGIN / REGISTER PAGE
+    ************************************/
+    .loginregister-form-flex {
+        display: block;
+        margin-top: 30%
+    }
+
+    .div-login-form,
+    .success-login,
+    .delete-success-message {
+        margin-top: 20%
+    }
+
+    .div-register-form>h2,
+    .div-login-form>h2 {
+        width: 65%
+    }
+
+    .registerForm,
+    .loginForm {
+        width: 70%;
+    }
+
+    
+    /* *********************************
+    ACCOUNT PAGES
+    ************************************/
+    .account-sidebar-content {
+        display: block;
+        margin-top: 20%
+    }
+
+    .sidebar {
+        width: 98%;
+        line-height: 2
+    }
+
+    .account-loggedin {
+        width: 90%;
+    }
+
+    .account-loggedin img {
+        width: 100%;
+    }
+
+    .updatePasswordForm,
+    .updateInfoForm,
+    .addMealForm,
+    .deleteMealForm,
+    .updateMealForm,
+    .uploadImageForm {
+        width: 97%;
+        padding: 6%;
+    }
+
+    .updatePasswordForm input,
+    .updateInfoForm input,
+    .addMealForm input,
+    .deleteMealForm input,
+    .updateMealForm input,
+    .uploadImageForm input {
+        width: 85%;
+    }
+
+    .div-update-form h2,
+    .div-update-meal h2 {
+        font-size: 2.7rem;
+        width: 75%
+    }
+
+    .info-user,
+    .alert-deleting {
+        width: 80%;
+        margin-top: 10%
+    }
+
+    /* *********************************
+    USER ORDERS, 
+    SHOW BOOKINGS, 
+    SHOW ORDERS 
+    {  TABLES  }
+    ************************************/
+    .div-table-data,
+    .table-data {
+        margin-top: 10%;
+    }
+
+    .table-data {
+        width: 80%
+    }
+
+
+    /* *********************************
+    FOOTER
+    ************************************/
+    .map p {
+        font-size: 1.5rem;
+    }
+
+    .copyright > .logo {
+        width: 40%;
+    }
+} 

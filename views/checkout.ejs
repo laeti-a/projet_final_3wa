@@ -1,0 +1,66 @@
+<%- include('partials/head'); -%>
+
+<!-- Start Header -->
+<header class="header">
+    <nav class="navbar"> <!-- Start navbar -->
+        <a href="/" class="logo"><img src="/img/logo/logo_transparent.png" alt="Logo Vegan'Eat" title="Bienvenue !"/></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/booking" class="nav-link">Réservation</a>
+            </li>
+            <li class="nav-item">
+                <a href="/order" class="nav-link">Commander</a>
+            </li>
+            <% if (loggedin == false) {%>
+                <li class="nav-item">
+                    <a href="/loginRegister" class="nav-link">S'inscrire / Se Connecter</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == false) {%>
+                <li class="nav-item">
+                    <a href="/my-account" class="nav-link">Mon Compte</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == true) {%>
+                <li class="nav-item">
+                    <a href="/my-account-admin" class="nav-link">Compte Admin</a>
+                </li>
+            <% } %>
+        </ul>
+
+        <!-- Start menu hamburger -->
+        <div class="menu-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- End menu hamburger --> 
+        
+    </nav> <!-- End navbar -->
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> 
+</header>
+<!-- End Header -->
+
+<!-- Start Main -->
+<main class="main">
+    <section class="background-checkout"> <!-- Section background checkout -->
+        <div class="checkout-text"> <!-- Div checkout text -->
+            <h1>Bien reçu !</h1>
+            <p>Votre commande a bien été prise en compte </p>
+            <a href="/">Retour à l'accueil</a>
+        </div> <!-- End div checkout text -->
+    </section> <!-- End section background checkout -->
+
+</main>
+<!-- End Main -->
+
+
+<%- include('partials/footer'); -%>

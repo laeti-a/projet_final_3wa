@@ -1,0 +1,102 @@
+<%- include('partials/head'); -%>
+
+<!-- Start Header -->
+<header class="header">
+    <nav class="navbar"> <!-- Start navbar -->
+        <a href="/" class="logo"><img src="/img/logo/logo_transparent.png" alt="Logo Vegan'Eat" title="Bienvenue !"/></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/booking" class="nav-link">Réservation</a>
+            </li>
+            <li class="nav-item">
+                <a href="/order" class="nav-link active">Commander</a>
+            </li>
+            <% if (loggedin == false) {%>
+                <li class="nav-item">
+                    <a href="/loginRegister" class="nav-link">S'inscrire / Se Connecter</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == false) {%>
+                <li class="nav-item">
+                    <a href="/my-account" class="nav-link">Mon Compte</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == true) {%>
+                <li class="nav-item">
+                    <a href="/my-account-admin" class="nav-link">Compte Admin</a>
+                </li>
+            <% } %>
+        </ul>
+
+        <!-- Start menu hamburger -->
+        <div class="menu-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- End menu hamburger --> 
+        
+    </nav> <!-- End navbar -->
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> 
+</header>
+<!-- End Header -->
+
+<!-- Start Main -->
+<main class="main">
+
+    <section class="section-cart-content"> <!-- Section cart content -->
+        <div class="button-in-cart">
+            <a class="back-to-order" href="/order">Retour vers le choix des plats</a>
+            <form id="emptyCartForm" class="emptyCartForm" action="/empty-cart" method="POST">
+                <button type="submit">Vider le panier</button>
+            </form>
+        </div>
+
+        <div class="cart-details"> <!-- Div cart details -->
+
+            <% if(cart) {%>
+                <h2>Votre Panier</h2>
+                
+                <% for(let i = 0; i < cart.meals.length; i++){ let meal = cart.meals[i]; %>
+
+                    <div class="cart-meals">
+                        <img src="/img/meals/<%=meal.photo%>" alt="<%=meal.nameMeal%>">
+                        <div class="cart-meal-details">
+                            <h3><%= meal.nameMeal %></h3>
+                            <p>Quantité : <%= meal.quantity %></p>    
+                            <p class="meal-price">Prix individuel : <%= meal.price %></p>
+                        </div> 
+                        <div class="form-delete-fromCart">
+                            <form id="deleteFromCartForm" class="deleteFromCartForm" action="/delete-fromCart" method="POST">
+                                <input type="hidden" name="meal_id" value="<%=meal.id%>">
+                                <button type="submit">Retirer</button>
+                            </form>
+                        </div>
+                    </div>
+                <% } %>
+
+                <div class="total-cart"> <!-- Div total cart -->
+                    <p class="meal-price">Total : <%= cart.totalPrice %></p>
+                    <form id="checkoutForm" class="checkoutForm" action="/checkout" method="POST">
+                        <input type="hidden" name="cart_order">
+                        <button type="submit">Valider la commande</button>
+                    </form>
+                </div> <!-- End div total cart -->
+                
+            <% } else { %>
+                <h2>Votre Panier est vide !</h2>
+            <% } %>
+        </div> <!-- End div cart details -->
+    </section> <!-- End section cart content -->
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

@@ -1,0 +1,94 @@
+<%- include('partials/head'); -%>
+
+<!-- Start Header -->
+<header class="header">
+    <nav class="navbar"> <!-- Start navbar -->
+        <a href="/" class="logo"><img src="/img/logo/logo_transparent.png" alt="Logo Vegan'Eat" title="Bienvenue !"/></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/menu" class="nav-link active">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/booking" class="nav-link">Réservation</a>
+            </li>
+            <li class="nav-item">
+                <a href="/order" class="nav-link">Commander</a>
+            </li>
+            <% if (loggedin == false) {%>
+                <li class="nav-item">
+                    <a href="/loginRegister" class="nav-link">S'inscrire / Se Connecter</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == false) {%>
+                <li class="nav-item">
+                    <a href="/my-account" class="nav-link">Mon Compte</a>
+                </li>
+            <%  } else if (loggedin == true && isAdmin == true) {%>
+                <li class="nav-item">
+                    <a href="/my-account-admin" class="nav-link">Compte Admin</a>
+                </li>
+            <% } %>
+        </ul>
+
+        <!-- Start menu hamburger -->
+        <div class="menu-hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <!-- End menu hamburger --> 
+        
+    </nav> <!-- End navbar -->
+
+    <!-- Progress bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+    </div> 
+</header>
+<!-- End Header -->
+
+<!-- Start Main -->
+<main class="main">
+
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+    
+    <section class="menu-title"> <!-- Section menu title -->
+        <img src="/img/svg/chef_menu.svg" alt="Chef cuisinier">
+        <h1>Notre Menu</h1>
+    </section> <!-- End section menu title -->
+
+    <div class="menu-container"> <!-- Div menu container -->
+        <div class="menu-grid"> <!-- Div grid -->
+            <img class="photo-1" src="/img/meals/burger.jpg" alt="Burger vegan - Unsplash Photos" />
+            <img class="photo-2" src="/img/meals/noodles.jpg" alt="Nouilles asiatiques - Unsplash Photos" />
+            <img class="photo-3" src="/img/meals/risotto.jpg" alt="Risotto - Unsplash Photos" />
+            <img class="photo-4" src="/img/meals/pizza.jpg" alt="Pizza - Unsplash Photos" />
+            <img class="photo-5" src="/img/meals/assortiment_cookie.jpg" alt="Assortiment de cookies - Unsplash Photos" />
+        </div> <!-- End div grid -->
+
+        <div class="menu-details-meals"> <!-- Div menu details meals -->
+            <h2>A la Carte</h2>
+            <% meals.forEach( el => { %>
+                <div class="menu-details-flex"> <!-- Div menu details flex -->
+                    <div class="menu-meal-name-description">
+                        <p class="menu-meal-name"><%= el.nameMeal %></p>
+                        <p> <%= el.description %> </p>
+                        <p class="meal-price"> <%= el.price %> </p>
+                    </div>
+                    <img src="/img/meals/<%= el.photo %>" alt="<%= el.nameMeal %>">
+                </div> <!-- End div menu details flex -->
+            <% }) %>
+        </div> <!-- End div menu details meals -->
+        
+    </div> <!-- End div menu container -->
+
+
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>

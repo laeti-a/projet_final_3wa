@@ -1,0 +1,38 @@
+<%- include('partials/head'); -%>
+
+<%- include('partials/header_user'); -%>
+
+<!-- Start Main -->
+<main class="main">
+
+    <!-- Button scroll to top -->
+    <button type="button" class="btn-back-to-top">
+        <i class="fas fa-2x fa-arrow-up"></i>
+    </button>
+
+    <section class="account-sidebar-content"> <!-- Section account sidebar content -->
+        <div class="sidebar"> <!-- Div sidebar -->
+            <a href="/informations">Mes informations</a>
+            <a href="/my-orders">Mes commandes</a>
+            <a href="/change-informations">Modifier mes informations</a>
+            <a href="/delete-account">Supprimer mon compte</a>
+            <a href="/logout" class="logout-link">Se déconnecter</a>
+        </div> <!-- End div sidebar -->
+
+        <div class="info-user"> <!-- Div info user -->
+            <h2>Vos informations actuelles</h2>
+            <% user.forEach( el => { %>
+                <p>Votre date de naissance : <%= el.birthDate %></p>
+                <h3>Adresse</h3>
+                <p>N° et rue : <%= el.addressContent %> </p>
+                <p>Ville : <%= el.addressCity %> </p>
+                <p>Code postal : <%= el.addressZipCode %> </p>
+                <p class="info-country">Pays : <%= el.country %> </p>
+                <p>Numéro de téléphone : <%= el.phone %> </p>
+            <% }) %>
+        </div> <!-- End div info user -->
+    </section> <!-- End section account sidebar content -->
+</main>
+<!-- End Main -->
+
+<%- include('partials/footer'); -%>
