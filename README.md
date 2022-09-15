@@ -16,7 +16,7 @@ Site web pour le restaurant __fictif__ _Vegan'Eat_ où nous retrouvons la possib
 
 # Développement
 
-Les technologies utilisées sont les suivantes : les templates EJS pour la partie front, NodeJS pour la partie back et une base de données SQL. On retrouve également du Javascript ES6 ainsi que du CSS3
+Les technologies utilisées sont les suivantes : les templates EJS pour la partie front, NodeJS pour la partie back et une base de données SQL. Nous retrouvons également du Javascript ES6 ainsi que du CSS3
 
 Mise à part une feuille de CSS externe (__normalize.css__), tout est fait from scratch, sans utilisation de JQuery, Bootstrap ou autres.
 
